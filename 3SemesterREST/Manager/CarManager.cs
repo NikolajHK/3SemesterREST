@@ -37,6 +37,7 @@ namespace _3SemesterREST.Manager
             catch
             {
                 _context.Cars.Remove(newCar);
+                throw new Exception();
 
             }
         }
