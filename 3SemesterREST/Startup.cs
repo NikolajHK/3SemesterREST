@@ -11,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _3SemesterREST.Manager;
+using Microsoft.EntityFrameworkCore;
 
 namespace _3SemesterREST
 {
@@ -28,6 +30,7 @@ namespace _3SemesterREST
         {
 
             services.AddControllers();
+            services.AddDbContext<CarContext>(opt => opt.UseSqlServer(Secrets.ConnectionString));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "_3SemesterREST", Version = "v1" });
