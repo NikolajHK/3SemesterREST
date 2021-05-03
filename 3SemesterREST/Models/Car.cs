@@ -7,5 +7,6 @@ namespace _3SemesterREST.Models
 {
     public class Car
     {
+        public int NumberOfCars { get; set; }
     }
 }
