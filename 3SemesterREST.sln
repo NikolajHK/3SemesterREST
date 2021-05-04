@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3SemesterREST", "3SemesterREST\3SemesterREST.csproj", "{98B360C8-8500-46C5-971F-D2C1CC8F089D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdpReceiver", "UdpReceiver\UdpReceiver.csproj", "{130F78C2-AF93-48AD-B1E6-555168547234}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdpReceiver", "UdpReceiver\UdpReceiver.csproj", "{130F78C2-AF93-48AD-B1E6-555168547234}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3SemesterRESTTests", "3SemesterRESTTests\3SemesterRESTTests.csproj", "{02E4E35C-25EC-4955-A534-B64EFBE01E39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{130F78C2-AF93-48AD-B1E6-555168547234}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{130F78C2-AF93-48AD-B1E6-555168547234}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{130F78C2-AF93-48AD-B1E6-555168547234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02E4E35C-25EC-4955-A534-B64EFBE01E39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E4E35C-25EC-4955-A534-B64EFBE01E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E4E35C-25EC-4955-A534-B64EFBE01E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E4E35C-25EC-4955-A534-B64EFBE01E39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
