@@ -11,23 +11,37 @@ namespace UdpReceiver
 {
     public class SenderToApi
     {
-        
-
+        /// <summary>
+        /// metode laver en http post reqeust til api'en. 
+        /// </summary>
         public static async Task<TOut> Post<TIn, TOut>(string uri, TIn item)
         {
             Car car = new Car();
 
             using HttpClient client = new HttpClient();
+
+            // serialize car object til json, som bruges som en string 
             string CarObject = JsonConvert.SerializeObject(car);
+
+            // gøre oplysningerne klar til at blive sendt til api
             StringContent requestContent = new StringContent(CarObject, Encoding.UTF8, "application/json");
 
+            // sender en post request til vores api med oplysningerne fra raspberry pi
             HttpResponseMessage response = await client.PostAsync(uri, requestContent);
+
+            // venter på svar fra api
             string responseContent = await response.Content.ReadAsStringAsync();
+
+            // hvis det er gået godt, går vi inden i if sætning krop (gælder alle http statuskoder mellem 200 til 299)
             if (response.IsSuccessStatusCode)
             {
+                // vi deserialize json, som vi har modtaget fra api
                 TOut data = JsonConvert.DeserializeObject<TOut>(responseContent);
                 return data;
             }
+            
+            // vi kaster kun exception, hvis det er gået galt
+            //exception giver besked tilbage med http stauskode og response content fra api
             throw new KeyNotFoundException($"Status code={response.StatusCode} Message={responseContent}");
         }
     }

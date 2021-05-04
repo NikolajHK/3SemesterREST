@@ -8,7 +8,7 @@ namespace UdpReceiver.Model
 {
     public class Car
     {
-        public int Visind { get; set; }
+        public int IsIn { get; set; }
         public string Farve { get; set; }
     }
 }

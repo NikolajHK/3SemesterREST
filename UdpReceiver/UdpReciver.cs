@@ -11,24 +11,39 @@ namespace UdpReceiver
 {
     public class UdpReciver
     {
+        /// <summary>
+        /// Denne metode modtager oplysninger fra vores raspberry pi
+        /// </summary>
         public void ReciverData()
         {
+            // bestemmer hvilken port programmet skal modtager oplysninger 
             UdpClient udpServer = new UdpClient(9999);
 
+            // laver ip adresse om til en string
             IPAddress ip = IPAddress.Parse("127.0.0.1");
+
+            // her bliver afgjort hvilken ip adresse den modtager fra
+            // og bestemt hvilken port den modtager i.
             IPEndPoint RemoteIPEndpoint = new IPEndPoint(ip, 9999);
 
             try
             {
                 Car car = new Car();
 
+                // laver de modtaget oplysninger om byte array
                 Byte[] recivedBytes = udpServer.Receive(ref RemoteIPEndpoint);
 
+                // laver oplysninng om fra byte til string
                 string recivedData = Encoding.ASCII.GetString(recivedBytes);
 
+                // splidt oplysning op i hver deres felt af et string array
                 string[] data = recivedData.Split("");
+
+                // ligger oplysninger hen modellens properties 
                 car.Farve = data[0];
-                car.Visind = Int32.Parse(data[1]);
+
+                // laver det om til tal fra string inden bliver lagt over i properties
+                car.IsIn = Int32.Parse(data[1]);
 
             }
             catch (Exception e)
