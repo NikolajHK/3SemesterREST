@@ -34,10 +34,10 @@ namespace _3SemesterREST.Manager
                 _context.SaveChanges();
                 return newCar;
             }
-            catch
+            catch (DbUpdateException ex)
             {
                 _context.Cars.Remove(newCar);
-                throw new Exception();
+                throw new CarException(ex.InnerException.Message);
 
             }
         }
@@ -62,9 +62,9 @@ namespace _3SemesterREST.Manager
                 _context.SaveChanges();
                 return car;
             }
-            catch
+            catch (DbUpdateException ex)
             {
-                throw new Exception();
+                throw new CarException(updates.IsIn + " " + ex.InnerException.Message);
             }
         }
     }
