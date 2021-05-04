@@ -7,7 +7,7 @@ namespace _3SemesterREST.Models
 {
     public class CarException : Exception
     {
-        CarException(string message) : base(message)
+        public CarException(string message) : base(message)
         {
 
         }

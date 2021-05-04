@@ -16,6 +16,10 @@ namespace _3SemesterREST.Manager
             _context = context;
         }
 
+        public CarManager()
+        {
+        }
+
         public IEnumerable<Car> GetAll()
         {
             return _context.Cars;
