@@ -1,7 +1,7 @@
-from sense_ hat import SenseHat
+from sense_hat import SenseHat
 from time import sleep
 import time
-from socket import *
+from socket import socket 
 from datatime import datatime
 import random
 
