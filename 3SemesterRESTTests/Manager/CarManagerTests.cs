@@ -49,8 +49,6 @@ namespace _3SemesterREST.Manager.Tests
             Assert.AreEqual(newCar.IsIn, carById.IsIn);
 
             Assert.IsNull(manager.GetById(newCar.Id + 1));
-            hall
-
         }
 
     }
